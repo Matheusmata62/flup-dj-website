@@ -1,12 +1,31 @@
 import { PrismaClient } from '@prisma/client'
+import bcrypt from 'bcryptjs'
 
 const prisma = new PrismaClient()
 
 async function main() {
-  console.log('Criando eventos de exemplo...')
+  console.log('Criando usuário admin e eventos de exemplo...')
 
-  // Limpar eventos existentes
+  // Limpar usuários e eventos existentes
   await prisma.event.deleteMany({})
+  await prisma.admin.deleteMany({})
+
+  // Criar usuário admin padrão
+  const hashedPassword = await bcrypt.hash('flup2026', 10)
+  await prisma.admin.create({
+    data: {
+      email: 'flup@dj.com',
+      password: hashedPassword,
+      phone: '(62) 99999-9999',
+      djName: 'DJ Flup',
+      djBio: 'DJ profissional com mais de 10 anos de experiência em eventos',
+      basicPrice: 250,
+      intermediatePrice: 600,
+      completePrice: 1600,
+    },
+  })
+
+  console.log('✅ Usuário admin criado: flup@dj.com / flup2026')
 
   // Criar eventos
   await prisma.event.createMany({
