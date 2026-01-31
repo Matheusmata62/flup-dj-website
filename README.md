@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DJ Flup - Landing Page 🎵
 
-## Getting Started
+Uma landing page profissional e moderna para DJ Flup, um DJ especializado em criar experiências visuais e sonoras de alto impacto em Goiânia.
 
-First, run the development server:
+## 🚀 Características
+
+- **Design Dark Mode** com estética noturna
+- **Cores Neon** (Verde #00ff41 e Azul #00d4ff) para destaque visual
+- **Animações Suaves** com Framer Motion
+- **Responsividade Total** - Otimizado para mobile, tablet e desktop
+- **Performance Otimizada** com Next.js App Router
+- **Componentes Reutilizáveis** com TypeScript
+- **SEO Ready** com metadados otimizados
+
+## 📋 Seções da Página
+
+1. **Header** - Logo, navegação suave e botão CTA
+2. **Hero Section** - Título impactante com chamada para ação
+3. **Galeria** - Grid Bento com fotos do artista e efeitos hover
+4. **Pacotes** - Cards de preços (Básico, Intermediário, Completo)
+5. **Condições** - Requisitos, responsabilidades e informações importantes
+6. **Contato** - Formulário de pré-reserva e informações de contato
+7. **Footer** - Links rápidos e redes sociais
+8. **Botão WhatsApp Flutuante** - Acesso rápido ao atendimento
+
+## 🛠️ Stack Tecnológico
+
+- **Framework**: Next.js 16.1.6 (App Router)
+- **Linguagem**: TypeScript
+- **Estilos**: Tailwind CSS
+- **Animações**: Framer Motion
+- **Ícones**: Lucide React
+- **Build Tool**: Turbopack
+
+## 📦 Quick Start
+
+### Executar o servidor de desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build para Produção
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 📱 Responsividade
 
-To learn more about Next.js, take a look at the following resources:
+O projeto foi desenvolvido com "Mobile First" como prioridade, garantindo:
+- Layouts responsivos em mobile, tablet e desktop
+- Navegação adaptativa (menu hamburger em mobile)
+- Imagens otimizadas com Next.js Image
+- Toque otimizado para dispositivos mobile
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Cores e Estilo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Fundo Principal**: #0a0a0a (Preto)
+- **Fundo Secundário**: #1a1a1a (Cinza Escuro)
+- **Neon Verde**: #00ff41
+- **Neon Azul**: #00d4ff
+- **Texto Principal**: Branco (#ffffff)
+- **Texto Secundário**: Cinza (#9ca3af)
 
-## Deploy on Vercel
+## 📊 Pacotes Oferecidos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Básico** - R$ 250
+   - 1 hora de set
+   - Vídeo simples
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Intermediário** - R$ 600 (Mais Popular)
+   - 2 horas de set
+   - After Movie
+   - Material de marketing
+
+3. **Completo** - R$ 1.600
+   - Up to 4 horas de set
+   - Experiência Premium
+   - Dançarinos profissionais
+   - Efeitos visuais
+
+## 📞 Contato
+
+- **WhatsApp**: (62) 9 9999-9999
+- **Email**: contato@djflup.com
+- **Localização**: Goiânia, Goiás
+
+## 📄 Licença
+
+Este projeto é de propriedade de DJ Flup. Todos os direitos reservados © 2026.
+
+---
+
+Desenvolvido com ❤️ para DJ Flup - Transformando pistas em Goiânia!

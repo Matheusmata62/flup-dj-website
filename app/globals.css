@@ -1,26 +1,181 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --neon-green: #00ff41;
+  --neon-blue: #00d4ff;
+  --dark-gray: #1a1a1a;
+  --dark-charcoal: #0f0f0f;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-neon-green: var(--neon-green);
+  --color-neon-blue: var(--neon-blue);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Archivo Black';
+  src: url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.neon-text-green {
+  color: var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+}
+
+.neon-text-blue {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+.neon-glow-green {
+  box-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green), inset 0 0 20px rgba(0, 255, 65, 0.1);
+}
+
+.neon-glow-blue {
+  box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue), inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.gradient-neon {
+  background: linear-gradient(135deg, var(--neon-green), var(--neon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-neon-green {
+  background: var(--neon-green);
+  color: #000;
+  border: 2px solid var(--neon-green);
+  transition: all 0.3s ease;
+}
+
+.btn-neon-green:hover {
+  box-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green);
+  transform: scale(1.05);
+}
+
+.btn-neon-blue {
+  background: transparent;
+  color: var(--neon-blue);
+  border: 2px solid var(--neon-blue);
+  transition: all 0.3s ease;
+}
+
+.btn-neon-blue:hover {
+  background: var(--neon-blue);
+  color: #000;
+  box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
+}
+
+/* Animações Avançadas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green); }
+  50% { box-shadow: 0 0 40px var(--neon-green), 0 0 80px var(--neon-green); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes typewriter {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes glow-text {
+  0%, 100% { text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green); }
+  50% { text-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-typewriter {
+  animation: typewriter 3s steps(40, end);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.animate-glow-text {
+  animation: glow-text 2s ease-in-out infinite;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 65, 0.1);
+}
+
+.glass-hover:hover {
+  background: rgba(15, 15, 15, 0.9);
+  border-color: rgba(0, 255, 65, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+}
+
+/* Gradientes */
+.gradient-text-neon {
+  background: linear-gradient(90deg, var(--neon-green), var(--neon-blue), var(--neon-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 3D Transforms */
+.perspective-3d {
+  perspective: 1000px;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(-5deg);
+}
+
+/* Scroll Animations */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-fade.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
