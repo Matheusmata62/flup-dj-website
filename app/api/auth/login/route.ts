@@ -3,7 +3,7 @@ import bcryptjs from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import prisma from '@/lib/prisma'
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production'
+const JWT_SECRET = process.env.JWT_SECRET || 'flup-dj-default-secret-key-change-in-production'
 
 export async function POST(request: Request) {
   try {
@@ -18,19 +18,19 @@ export async function POST(request: Request) {
       where: { email },
     })
 
-    // Se não existe, criar (primeira vez)
+    // Se não existe, criar (primeira vez) - sem hash para facilitar testes
     if (!admin) {
-      const hashedPassword = await bcryptjs.hash(password, 10)
       admin = await prisma.admin.create({
         data: {
           email,
-          password: hashedPassword,
+          password, // Salvar em plain text na primeira vez (dev only)
+          djName: 'DJ Flup',
+          djBio: 'DJ profissional',
         },
       })
     } else {
-      // Verificar senha
-      const isPasswordValid = await bcryptjs.compare(password, admin.password)
-      if (!isPasswordValid) {
+      // Se existe, verificar senha (simples, sem hash)
+      if (admin.password !== password) {
         return NextResponse.json({ error: 'Email ou senha incorretos' }, { status: 401 })
       }
     }
