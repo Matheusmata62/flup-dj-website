@@ -103,3 +103,7 @@ export async function POST() {
     return NextResponse.json({ error: 'Failed to initialize' }, { status: 500 })
   }
 }
+
+export async function GET() {
+  return POST()
+}
